@@ -14,7 +14,8 @@ echo "deeplearning1" >> .git/info/sparse-checkout
 git fetch
 git pull origin master
 cd ..
-ls -la  fastai-courses
+ls -la fastai-courses
+ls -la fastai-courses/deeplearning1
 jupyter notebook \
 	--no-browser --no-mathjax --ip=* --port $PORT \
 	$JUPYTER_NOTEBOOK_ARGS \
