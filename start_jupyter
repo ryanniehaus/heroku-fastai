@@ -5,7 +5,14 @@ pgcontents init -l $DATABASE_URL --no-prompt
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user
 
+mkdir fastai-courses
+cd fastai-courses
+git init
+git remote add -f origin https://github.com/ryanniehaus/fastai-courses.git
+git config core.sparseCheckout true
+echo "deeplearning1" >> .git/info/sparse-checkout
+git pull origin master
 jupyter notebook \
 	--no-browser --no-mathjax --ip=* --port $PORT \
 	$JUPYTER_NOTEBOOK_ARGS \
-	notebooks
+	fastai-courses/deeplearning1
