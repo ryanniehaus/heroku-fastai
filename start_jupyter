@@ -11,7 +11,9 @@ git init
 git remote add -f origin https://github.com/ryanniehaus/fastai-courses.git
 git config core.sparseCheckout true
 echo "deeplearning1" >> .git/info/sparse-checkout
+git fetch
 git pull origin master
+cd ..
 jupyter notebook \
 	--no-browser --no-mathjax --ip=* --port $PORT \
 	$JUPYTER_NOTEBOOK_ARGS \
