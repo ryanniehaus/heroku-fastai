@@ -12,6 +12,7 @@ dependencies:
   - sqlalchemy
   - nose
   - git
+  - gitpython
   - pip:
     - git+git://github.com/pl31/pgcontents.git
     - git+git://github.com/ipython-contrib/jupyter_contrib_nbextensions.git
