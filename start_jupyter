@@ -1,5 +1,34 @@
 #!/usr/bin/env bash
 
+#make sure the ssh-agent is running in the background
+eval "$(ssh-agent -s)"
+
+#add the ssh key to the agent
+git config --global user.email "ryan.niehaus@gmail.com"
+git config --global user.name "Ryan Niehaus"
+git config --global credential.https://github.com.username ryanniehaus
+git config --global push.default simple
+
+wget https://raw.githubusercontent.com/ryanniehaus/heroku-bash-buildpack/master/bin/dataURLFromCloudinary.py
+
+echo downloading $(dataURLFromCloudinary.py id_rsa)
+wget --no-cache $(dataURLFromCloudinary.py id_rsa) &> /dev/null
+echo downloading $(dataURLFromCloudinary.py id_rsa.pub)
+wget --no-cache $(dataURLFromCloudinary.py id_rsa.pub) &> /dev/null
+chmod og-rwx,u+rw id_rsa*
+
+ln -s ~/.apt/usr/share/tcltk/tcl8.6 ~/.apt/usr/lib/tcl8.6
+
+expect << EOF
+  spawn ssh-add id_rsa
+  expect "Enter passphrase"
+  send "$RSA_PASSPHRASE\r"
+  expect eof
+EOF
+
+ssh -q -oStrictHostKeyChecking=no git@github.com
+echo ssh check returned $?
+
 pgcontents init -l $DATABASE_URL --no-prompt
 
 jupyter contrib nbextension install --user
