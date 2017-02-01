@@ -14,13 +14,13 @@ git config --global push.default simple
 
 wget https://raw.githubusercontent.com/ryanniehaus/heroku-bash-buildpack/master/bin/dataURLFromCloudinary.py
 
-echo downloading $(dataURLFromCloudinary.py id_rsa)
-wget --no-cache $(dataURLFromCloudinary.py id_rsa) &> /dev/null
-echo downloading $(dataURLFromCloudinary.py id_rsa.pub)
-wget --no-cache $(dataURLFromCloudinary.py id_rsa.pub) &> /dev/null
-chmod og-rwx,u+rw id_rsa*
+chmod ug+rx ./*.py
 
-ln -s ~/.apt/usr/share/tcltk/tcl8.6 ~/.apt/usr/lib/tcl8.6
+echo downloading $(./dataURLFromCloudinary.py id_rsa)
+wget --no-cache $(./dataURLFromCloudinary.py id_rsa) &> /dev/null
+echo downloading $(./dataURLFromCloudinary.py id_rsa.pub)
+wget --no-cache $(./dataURLFromCloudinary.py id_rsa.pub) &> /dev/null
+chmod og-rwx,u+rw id_rsa*
 
 expect << EOF
   spawn ssh-add id_rsa
