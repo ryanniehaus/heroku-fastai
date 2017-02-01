@@ -3,6 +3,8 @@
 #make sure the ssh-agent is running in the background
 eval "$(ssh-agent -s)"
 
+conda install -c auto cloudinary
+
 #add the ssh key to the agent
 git config --global user.email "ryan.niehaus@gmail.com"
 git config --global user.name "Ryan Niehaus"
