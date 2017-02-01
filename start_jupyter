@@ -3,6 +3,7 @@
 #make sure the ssh-agent is running in the background
 eval "$(ssh-agent -s)"
 
+apt-get install expect
 pip install cloudinary
 conda install -c auto cloudinary
 
