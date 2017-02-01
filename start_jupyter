@@ -41,7 +41,7 @@ jupyter nbextensions_configurator enable --user
 mkdir fastai-courses
 cd fastai-courses
 git init
-git remote add -f origin "$GIT_REPO_URL"
+git remote add -t master -f origin "$GIT_REPO_URL"
 git config core.sparseCheckout true
 echo "deeplearning1" >> .git/info/sparse-checkout
 git fetch
