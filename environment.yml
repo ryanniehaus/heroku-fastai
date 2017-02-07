@@ -3,6 +3,12 @@ dependencies:
   - notebook
   - ipywidgets
   - requests
+  - numpy
+  - cycler
+  - protobuf
+  - python-dateutil
+  - pyparsing
+  - pytz
   - git
   - gitpython
   - pip:
