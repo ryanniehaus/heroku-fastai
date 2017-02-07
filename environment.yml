@@ -3,7 +3,6 @@ dependencies:
   - notebook
   - ipywidgets
   - requests
-  - numpy
   - cycler
   - protobuf
   - python-dateutil
