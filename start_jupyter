@@ -3,6 +3,8 @@
 #make sure the ssh-agent is running in the background
 eval "$(ssh-agent -s)"
 
+pip install Theano
+pip install keras
 pip install cloudinary
 
 #add the ssh key to the agent
@@ -33,7 +35,7 @@ EOF
 ssh -q -oStrictHostKeyChecking=no git@github.com
 echo ssh check returned $?
 
-pgcontents init -l $DATABASE_URL --no-prompt
+#pgcontents init -l $DATABASE_URL --no-prompt
 
 jupyter contrib nbextension install --user
 jupyter nbextensions_configurator enable --user

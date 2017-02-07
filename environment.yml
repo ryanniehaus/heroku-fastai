@@ -5,7 +5,5 @@ dependencies:
   - requests
   - git
   - gitpython
-  - theano
-  - keras
   - pip:
     - git+git://github.com/ipython-contrib/jupyter_contrib_nbextensions.git
