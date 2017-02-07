@@ -5,7 +5,9 @@ eval "$(ssh-agent -s)"
 
 pip install Theano
 pip install keras
+pip install matplotlib
 pip install cloudinary
+pip install cPickle
 
 #add the ssh key to the agent
 git config --global user.email "ryan.niehaus@gmail.com"
