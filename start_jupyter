@@ -3,10 +3,6 @@
 #make sure the ssh-agent is running in the background
 eval "$(ssh-agent -s)"
 
-pip install tensorflow
-pip install Theano
-pip install keras
-pip install matplotlib
 pip install cloudinary
 #pip install cPickle
 
