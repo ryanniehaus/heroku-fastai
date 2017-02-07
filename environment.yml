@@ -4,7 +4,6 @@ dependencies:
   - ipywidgets
   - requests
   - cycler
-  - matplotlib
   - python-dateutil
   - pyparsing
   - pytz
